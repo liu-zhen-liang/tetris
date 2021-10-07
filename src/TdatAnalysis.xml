@@ -1,0 +1,1444 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TdatAnalysis</name>
+    </assembly>
+    <members>
+        <member name="T:TdatAnalysis.TdBytesDictionary">
+            <summary>Tdat文档字节数组键值对集合
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.Tdat">
+            <summary>Tdat文档对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.Tdat.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将当前对象转换成指定对象
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.Tdat.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="P:TdatAnalysis.Tdat.Type">
+            <summary>当前Tdat文档对象类型
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.#ctor(System.String,System.Int32@)">
+            <summary>创建当前字节数组键值对集合并解析Tdat文档并将内容存储
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的索引位置</param>
+        </member>
+        <member name="F:TdatAnalysis.TdBytesDictionary._ByteDictionary">
+            <summary>字节数组键值对集合
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.Add(System.String,TdatAnalysis.TdatBytes)">
+            <summary>添加键和相对应的值
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.KeepAdd(System.String,TdatAnalysis.TdatBytes)">
+            <summary>保守添加方法
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.ContainsKey(System.String)">
+            <summary>判断当前键值对数组是否包含此键
+            
+            </summary>
+            <param name="key">键元素</param>
+            <returns>true代表有此元素false代表没有此元素</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.Remove(System.String)">
+            <summary>移除指定键和键相对应值的方法
+            
+            </summary>
+            <param name="key">要移除的键对象</param>
+            <returns>元素移除成功则返回true否则返回false，如果没有找到此元素也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.TryGetValue(System.String,TdatAnalysis.TdatBytes@)">
+            <summary>试着获取与指定键关联的值
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">存储返回值的对象</param>
+            <returns>true表示获取到了false代表没有获取到</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatBytes})">
+            <summary>将当前键值对对象存入集合
+            
+            </summary>
+            <param name="item">要添加的键值对对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.Clear">
+            <summary>清除集合中所有元素
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatBytes})">
+            <summary>判断当前集合中是否有此键值对对象
+            
+            </summary>
+            <param name="item">要进行查找的键值对对象</param>
+            <returns>true表示有此对象false代表没有此对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatBytes}[],System.Int32)">
+            <summary>从指定索引位置复制元素到指定数组中
+            
+            </summary>
+            <param name="array">存储复制元素的数组</param>
+            <param name="arrayIndex">复制的开始索引</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatBytes})">
+            <summary>移除与此键值对对象匹配的元素
+            
+            </summary>
+            <param name="item">要进行移除的键值对对象</param>
+            <returns>true表示移除成功否则返回false，没有此元素也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.GetEnumerator">
+            <summary>foreach循环枚举器
+            
+            </summary>
+            <returns>键值对对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.System#Collections#IEnumerable#GetEnumerator">
+            <summary>foreach循环枚举器
+            
+            </summary>
+            <returns>键值对对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesDictionary.ToString">
+            <summary>将当前对象转换成字符串副本
+            
+            </summary>
+            <returns>字符串副本</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesDictionary.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesDictionary.Keys">
+            <summary>得到键元素的集合
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesDictionary.Values">
+            <summary>获取值集合
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesDictionary.Item(System.String)">
+            <summary>获取指定与指定键关联的值
+            
+            </summary>
+            <param name="key">键</param>
+            <returns>与此键关联的值</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesDictionary.Count">
+            <summary>键值对集合中包含的元素数量
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesDictionary.IsReadOnly">
+            <summary>判断当前键值对集合是否为只读的
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdItmeDictionary">
+            <summary>Tdat文档包对象键值对
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.IGetRecursionAppointTypeTdats">
+            <summary>递归查找Tdat文档指定类型方法接口
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.IGetRecursionAppointTypeTdats.GetRecursionAppointTypeTdats(TdatAnalysis.TdatType)">
+            <summary>递归查找Tdat文档指定类型
+            
+            </summary>
+            <param name="type">Tdat文档类型</param>
+            <returns>Tdat文档数组</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.#ctor(System.String,System.Int32@)">
+            <summary>创建当前Tdat“包”键值对集合并解析Tdat文档并将内容存储
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的索引位置</param>
+        </member>
+        <member name="F:TdatAnalysis.TdItmeDictionary._ItmeDictionary">
+            <summary>存储包键值对
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.Add(System.String,TdatAnalysis.TdatItme)">
+            <summary>添加键和相对应的值
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.ContainsKey(System.String)">
+            <summary>判断当前键值对数组是否包含此键
+            
+            </summary>
+            <param name="key">键元素</param>
+            <returns>true代表有此元素false代表没有此元素</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.Remove(System.String)">
+            <summary>移除指定键和键相对应值的方法
+            
+            </summary>
+            <param name="key">要移除的键对象</param>
+            <returns>元素移除成功则返回true否则返回false，如果没有找到此元素也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.TryGetValue(System.String,TdatAnalysis.TdatItme@)">
+            <summary>试着获取与指定键关联的值
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">存储返回值的对象</param>
+            <returns>true表示获取到了false代表没有获取到</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatItme})">
+            <summary>将当前键值对对象存入集合
+            
+            </summary>
+            <param name="item">要添加的键值对对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.KeepAdd(System.String,TdatAnalysis.TdatItme)">
+            <summary>保守添加方法
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.Clear">
+            <summary>清除集合中所有元素
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatItme})">
+            <summary>判断当前集合中是否有此键值对对象
+            
+            </summary>
+            <param name="item">要进行查找的键值对对象</param>
+            <returns>true表示有此对象false代表没有此对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatItme}[],System.Int32)">
+            <summary>从指定索引位置复制元素到指定数组中
+            
+            </summary>
+            <param name="array">存储复制元素的数组</param>
+            <param name="arrayIndex">复制的开始索引</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatItme})">
+            <summary>移除与此键值对对象匹配的元素
+            
+            </summary>
+            <param name="item">要进行移除的键值对对象</param>
+            <returns>true表示移除成功否则返回false，没有此元素也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.GetEnumerator">
+            <summary>foreach循环枚举器
+            
+            </summary>
+            <returns>键值对对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.System#Collections#IEnumerable#GetEnumerator">
+            <summary>foreach循环枚举器
+            
+            </summary>
+            <returns>键值对对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.ToString">
+            <summary>将当前对象转换成字符串副本
+            
+            </summary>
+            <returns>字符串副本</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeDictionary.GetRecursionAppointTypeTdats(TdatAnalysis.TdatType)">
+            <summary>递归获取当前类和其子包的类型
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeDictionary.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeDictionary.Keys">
+            <summary>得到键元素的集合
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeDictionary.Values">
+            <summary>获取值集合
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeDictionary.Item(System.String)">
+            <summary>获取指定与指定键关联的值
+            
+            </summary>
+            <param name="key">键</param>
+            <returns>与此键关联的值</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeDictionary.Count">
+            <summary>键值对集合中包含的元素数量
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeDictionary.IsReadOnly">
+            <summary>判断当前键值对集合是否为只读的
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdTextDictionary">
+            <summary>Tdat文档的字符串键值对集合
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.#ctor(System.String,System.Int32@)">
+            <summary>创建当前文本键值对集合并解析Tdat文档并将内容存储
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的索引位置</param>
+        </member>
+        <member name="F:TdatAnalysis.TdTextDictionary._TextDictionary">
+            <summary>字节数组键值对集合
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.Add(System.String,TdatAnalysis.TdatText)">
+            <summary>添加键和相对应的值
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.ContainsKey(System.String)">
+            <summary>判断当前键值对数组是否包含此键
+            
+            </summary>
+            <param name="key">键元素</param>
+            <returns>true代表有此元素false代表没有此元素</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.Remove(System.String)">
+            <summary>移除指定键和键相对应值的方法
+            
+            </summary>
+            <param name="key">要移除的键对象</param>
+            <returns>元素移除成功则返回true否则返回false，如果没有找到此元素也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.TryGetValue(System.String,TdatAnalysis.TdatText@)">
+            <summary>试着获取与指定键关联的值
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">存储返回值的对象</param>
+            <returns>true表示获取到了false代表没有获取到</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatText})">
+            <summary>将当前键值对对象存入集合
+            
+            </summary>
+            <param name="item">要添加的键值对对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.KeepAdd(System.String,TdatAnalysis.TdatText)">
+            <summary>保守添加方法
+            
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.Clear">
+            <summary>清除集合中所有元素
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatText})">
+            <summary>判断当前集合中是否有此键值对对象
+            
+            </summary>
+            <param name="item">要进行查找的键值对对象</param>
+            <returns>true表示有此对象false代表没有此对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatText}[],System.Int32)">
+            <summary>从指定索引位置复制元素到指定数组中
+            
+            </summary>
+            <param name="array">存储复制元素的数组</param>
+            <param name="arrayIndex">复制的开始索引</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.TdatText})">
+            <summary>移除与此键值对对象匹配的元素
+            
+            </summary>
+            <param name="item">要进行移除的键值对对象</param>
+            <returns>true表示移除成功否则返回false，没有此元素也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.GetEnumerator">
+            <summary>foreach循环枚举器
+            
+            </summary>
+            <returns>键值对对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.System#Collections#IEnumerable#GetEnumerator">
+            <summary>foreach循环枚举器
+            
+            </summary>
+            <returns>键值对对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextDictionary.ToString">
+            <summary>将当前对象转换成字符串副本
+            
+            </summary>
+            <returns>字符串副本</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdTextDictionary.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdTextDictionary.Keys">
+            <summary>得到键元素的集合
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdTextDictionary.Values">
+            <summary>获取值集合
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdTextDictionary.Item(System.String)">
+            <summary>获取指定与指定键关联的值
+            
+            </summary>
+            <param name="key">键</param>
+            <returns>与此键关联的值</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdTextDictionary.Count">
+            <summary>键值对集合中包含的元素数量
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdTextDictionary.IsReadOnly">
+            <summary>判断当前键值对集合是否为只读的
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdBytesList">
+            <summary>Tdat文档字节数组集合对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.#ctor(System.String,System.Int32@)">
+            <summary>创建当前字节数组集合对象，并解析Tdat文档得到内容并存入
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的开始索引</param>
+        </member>
+        <member name="F:TdatAnalysis.TdBytesList._BytesList">
+            <summary>Tdat文档的字节数组对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.IndexOf(TdatAnalysis.TdatBytes)">
+            <summary>确定指定元素所在的索引位置
+            
+            </summary>
+            <param name="item">查找的元素</param>
+            <returns>索引位置未找到为-1</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.Insert(System.Int32,TdatAnalysis.TdatBytes)">
+            <summary>将一个项插入指定索引处的
+            
+            </summary>
+            <param name="index">插入到的索引位置</param>
+            <param name="item">要插入的项</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.RemoveAt(System.Int32)">
+            <summary>移除指定索引处的元素
+            
+            </summary>
+            <param name="index">要移除项的索引</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.Add(TdatAnalysis.TdatBytes)">
+            <summary>把指定元素添加到集合
+            
+            </summary>
+            <param name="item">要添加的元素</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.Clear">
+            <summary>清除所有项
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.Contains(TdatAnalysis.TdatBytes)">
+            <summary>判断当前集合是否包含此元素
+            
+            </summary>
+            <param name="item">用于判断的元素</param>
+            <returns>true代表有此元素false表示没有此项</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.CopyTo(TdatAnalysis.TdatBytes[],System.Int32)">
+            <summary>从指定位置复制集合元素到指定数组中
+            
+            </summary>
+            <param name="array">存复制值的数组</param>
+            <param name="arrayIndex">从指定索引开始复制</param>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.Remove(TdatAnalysis.TdatBytes)">
+            <summary>移除特定对象的第一个匹配项
+            
+            </summary>
+            <param name="item">移除的对象</param>
+            <returns>成功移除元素返回true，失败返回false，如果在集合中没有找到指定项也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.GetEnumerator">
+            <summary>foreach枚举器
+            
+            </summary>
+            <returns>枚举的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.System#Collections#IEnumerable#GetEnumerator">
+            <summary>foreach枚举器
+            
+            </summary>
+            <returns>枚举的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdBytesList.ToString">
+            <summary>将当前对象转换成字符串副本
+            
+            </summary>
+            <returns>字符串副本</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesList.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesList.Item(System.Int32)">
+            <summary>获取或设置指定索引处的元素
+            
+            </summary>
+            <param name="index">获取元素的索引位置</param>
+            <returns>获取的元素对象</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesList.Count">
+            <summary>获取当前集合中元素数量
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdBytesList.IsReadOnly">
+            <summary>当前集合是否为只读的
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdItmeList">
+            <summary>Tdat包集合对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.#ctor(System.String,System.Int32@)">
+            <summary>创建当前“包”集合对象并解析Tdat文档得到内容并存入
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的开始索引</param>
+        </member>
+        <member name="F:TdatAnalysis.TdItmeList._ItmeList">
+            <summary>包集合
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.IndexOf(TdatAnalysis.TdatItme)">
+            <summary>确定指定元素所在的索引位置
+            
+            </summary>
+            <param name="item">查找的元素</param>
+            <returns>索引位置未找到为-1</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.Insert(System.Int32,TdatAnalysis.TdatItme)">
+            <summary>将一个项插入指定索引处的
+            
+            </summary>
+            <param name="index">插入到的索引位置</param>
+            <param name="item">要插入的项</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.RemoveAt(System.Int32)">
+            <summary>移除指定索引处的元素
+            
+            </summary>
+            <param name="index">要移除项的索引</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.Add(TdatAnalysis.TdatItme)">
+            <summary>把指定元素添加到集合
+            
+            </summary>
+            <param name="item">要添加的元素</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.Clear">
+            <summary>清除所有项
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.Contains(TdatAnalysis.TdatItme)">
+            <summary>判断当前集合是否包含此元素
+            
+            </summary>
+            <param name="item">用于判断的元素</param>
+            <returns>true代表有此元素false表示没有此项</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.CopyTo(TdatAnalysis.TdatItme[],System.Int32)">
+            <summary>从指定位置复制集合元素到指定数组中
+            
+            </summary>
+            <param name="array">存复制值的数组</param>
+            <param name="arrayIndex">从指定索引开始复制</param>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.Remove(TdatAnalysis.TdatItme)">
+            <summary>移除特定对象的第一个匹配项
+            
+            </summary>
+            <param name="item">移除的对象</param>
+            <returns>成功移除元素返回true，失败返回false，如果在集合中没有找到指定项也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.GetEnumerator">
+            <summary>foreach枚举器
+            
+            </summary>
+            <returns>枚举的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.System#Collections#IEnumerable#GetEnumerator">
+            <summary>foreach枚举器
+            
+            </summary>
+            <returns>枚举的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.ToString">
+            <summary>将当前对象转换成字符串副本
+            
+            </summary>
+            <returns>字符串副本</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdItmeList.GetRecursionAppointTypeTdats(TdatAnalysis.TdatType)">
+            <summary>递归获取当前类和其子包的类型
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeList.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeList.Item(System.Int32)">
+            <summary>获取或设置指定索引处的元素
+            
+            </summary>
+            <param name="index">获取元素的索引位置</param>
+            <returns>获取的元素对象</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeList.Count">
+            <summary>获取当前集合中元素数量
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdItmeList.IsReadOnly">
+            <summary>当前集合是否为只读的
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdTextList">
+            <summary>Tdat文档的文本集合对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.#ctor(System.String,System.Int32@)">
+            <summary>创建当前文本集合对象并解析Tdat文档得到内容并存入
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的开始索引</param>
+        </member>
+        <member name="F:TdatAnalysis.TdTextList._TextList">
+            <summary>存储文本对象的集合
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.IndexOf(TdatAnalysis.TdatText)">
+            <summary>确定指定元素所在的索引位置
+            
+            </summary>
+            <param name="item">查找的元素</param>
+            <returns>索引位置未找到为-1</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.Insert(System.Int32,TdatAnalysis.TdatText)">
+            <summary>将一个项插入指定索引处的
+            
+            </summary>
+            <param name="index">插入到的索引位置</param>
+            <param name="item">要插入的项</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.RemoveAt(System.Int32)">
+            <summary>移除指定索引处的元素
+            
+            </summary>
+            <param name="index">要移除项的索引</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.Add(TdatAnalysis.TdatText)">
+            <summary>把指定元素添加到集合
+            
+            </summary>
+            <param name="item">要添加的元素</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.Clear">
+            <summary>清除所有项
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.Contains(TdatAnalysis.TdatText)">
+            <summary>判断当前集合是否包含此元素
+            
+            </summary>
+            <param name="item">用于判断的元素</param>
+            <returns>true代表有此元素false表示没有此项</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.CopyTo(TdatAnalysis.TdatText[],System.Int32)">
+            <summary>从指定位置复制集合元素到指定数组中
+            
+            </summary>
+            <param name="array">存复制值的数组</param>
+            <param name="arrayIndex">从指定索引开始复制</param>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.Remove(TdatAnalysis.TdatText)">
+            <summary>移除特定对象的第一个匹配项
+            
+            </summary>
+            <param name="item">移除的对象</param>
+            <returns>成功移除元素返回true，失败返回false，如果在集合中没有找到指定项也返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.GetEnumerator">
+            <summary>foreach枚举器
+            
+            </summary>
+            <returns>枚举的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.System#Collections#IEnumerable#GetEnumerator">
+            <summary>foreach枚举器
+            
+            </summary>
+            <returns>枚举的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdTextList.ToString">
+            <summary>将当前对象转换成字符串副本
+            
+            </summary>
+            <returns>字符串副本</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdTextList.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdTextList.Item(System.Int32)">
+            <summary>获取或设置指定索引处的元素
+            
+            </summary>
+            <param name="index">获取元素的索引位置</param>
+            <returns>获取的元素对象</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdTextList.Count">
+            <summary>获取当前集合中元素数量
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdTextList.IsReadOnly">
+            <summary>当前集合是否为只读的
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.StringIndicator">
+            <summary>字符串指针
+            当前对象是一个结构用于存储当前字符串位置的字符串指针，其用途是为了给其子类使用字符串其中的某一个部分，因为如果截取字符串的话会产生巨大的内存消耗！因为如果截取的话就会产生新的字符串【这个字符串也需要占用内存】其子类也要一个字符串又会进行截取【又产生新的内存消耗】而且在此对象销毁前是不会进行释放的！使用这个类后就不会存储这个问题，这个类值存储了一个开始位置，和字符串长度，和原字符串引用位置！【12-16】个字节即可！
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.StringIndicator.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>创建字符串指针对象并设置值
+            
+            </summary>
+            <param name="exString">原字符串</param>
+            <param name="index">在原字符串中开始索引</param>
+            <param name="length">长度</param>
+        </member>
+        <member name="F:TdatAnalysis.StringIndicator._string">
+            <summary>原字符串
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.StringIndicator._index">
+            <summary>在原字符串中的开始索引位置
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.StringIndicator.ToString">
+            <summary>将当前字符串指针转换成字符串
+            
+            </summary>
+            <returns>当前指针包括的位置</returns>
+        </member>
+        <member name="P:TdatAnalysis.StringIndicator.Item(System.Int32)">
+            <summary>获取指定索引位置的字符
+            
+            </summary>
+            <param name="index">索引位置</param>
+            <returns>指定索引位置的字符</returns>
+        </member>
+        <member name="P:TdatAnalysis.StringIndicator.Length">
+            <summary>当前字符串长度
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdatBytes">
+            <summary>Tdat文档的字节数组对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.#ctor(System.Byte[])">
+            <summary>创建Tdat文档对象并存入字节数组
+            
+            </summary>
+            <param name="bytes">字节数组</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.#ctor(System.String,System.Int32@)">
+            <summary>创建字节数组对象并传入Tdat文档并解析其元素
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的开始索引位置</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.Equals(System.Object)">
+            <summary>判断当前对象是否和指定对象匹配
+            
+            </summary>
+            <param name="obj">匹配的对象</param>
+            <returns>判断是否一致</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.GetHashCode">
+            <summary>得到哈希值
+            
+            </summary>
+            <returns>哈希值</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.ToString">
+            <summary>将当前对象转换成字符串副本
+            
+            </summary>
+            <returns>字符串形式</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatBytes.BytesEquals(System.Byte[],System.Byte[])">
+            <summary>判断两个字节数组是否一致
+            
+            </summary>
+            <param name="b1">判断数组1</param>
+            <param name="b2">判断数组2</param>
+            <returns>true为一致false为不一致</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdatBytes.Bytes">
+            <summary>存储的字节数组
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdatBytes.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdatDocument">
+            <summary>Tdat文档的文档对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.#ctor(System.Single,System.String,TdatAnalysis.TdatItme)">
+            <summary>创建Tdat文档对象并给其参数赋值
+            
+            </summary>
+            <param name="versions">Tdat文档版本</param>
+            <param name="rootName">Tdat文档根对象名称</param>
+            <param name="rootItme">Tdat文档根对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.#ctor(System.Single)">
+            <summary>创建Tdat文档对象并设置版本和编码格式
+            
+            </summary>
+            <param name="versions">当前Tdat文档版本</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.Save(System.String)">
+            <summary>保存当前Tdat文档到指定路径
+            
+            </summary>
+            <param name="path">保存的路径</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.Save(System.String,System.Text.Encoding)">
+            <summary>保存当前Tdat文档到指定路径
+            
+            </summary>
+            <param name="path">保存的路径</param>
+            <param name="encoding">保存的编码格式</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.SaveBecomeString">
+            <summary>保存当前Tdat文档成字符串形式
+            
+            </summary>
+            <returns>Tdat文档对象的字符串形式</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.ReadTdat(System.String)">
+            <summary>读取当前Tdat文档
+            
+            </summary>
+            <param name="tdatFilePath">Tdat文档路径</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.ReadTdatText(System.String)">
+            <summary>将指定字符串解析成Tdat文档对象
+            
+            </summary>
+            <param name="tdatText">Tdat文档字符串数据</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatDocument.ToString">
+            <summary>当前对象信息
+            
+            </summary>
+            <returns>信息</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdatDocument.RootName">
+            <summary>根对象名称
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdatDocument.RootItme">
+            <summary>根对象
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdatDocument.Versions">
+            <summary>当前Tdat文档版本
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdatItme">
+            <summary>Tdat文档包对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.#ctor(System.String,System.Int32@)">
+            <summary>创建当前对象并解析Tdat文档
+            
+            </summary>
+            <param name="value">需要解析的Tdat文档</param>
+            <param name="index">当前项开始解析索引</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.AnalysisAttribute(System.String,System.Int32@)">
+            <summary>Tdat文档包对象属性解析方法
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档中的开始索引位置</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.AnalysisBagItme(System.String,System.Int32@)">
+            <summary>Tdat文档包内容项解析方法
+            
+            </summary>
+            <param name="value"></param>
+            <param name="index"></param>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.GetName(System.String,System.Int32@)">
+            <summary>获取属性或子项名称的方法
+            
+            </summary>
+            <param name="value"></param>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.GetTdatSonItmeType(System.String,System.Int32@)">
+            <summary>判断当前这个项的类型集合项的类型或者键值对项类型
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的开始索引</param>
+            <returns>类型</returns>
+        </member>
+        <member name="F:TdatAnalysis.TdatItme._itmeList">
+            <summary>Tdat文档元素键值对集合
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.Remove(System.String)">
+            <summary>移除指定名称的Tdat文档元素
+            
+            </summary>
+            <param name="Name">要移除元素的名称</param>
+            <returns>true代表移除成功false代表移除失败，没有此元素要返回false</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.ContainsName(System.String)">
+            <summary>判断是否有此名称的元素
+            
+            </summary>
+            <param name="name">判断的元素</param>
+            <returns>true代表有此元素false代表没有此名称的元素</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.ContainsTdat(TdatAnalysis.Tdat)">
+            <summary>判断是否有此Tdat文档对象
+            
+            </summary>
+            <param name="tdat">判断的对象</param>
+            <returns>true代表有此元素false代表没有此元素</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.Add(System.String,TdatAnalysis.Tdat)">
+            <summary>添加一个元素
+            
+            </summary>
+            <param name="name">名称</param>
+            <param name="tdat">Tdat文档对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.Add(System.Collections.Generic.KeyValuePair{System.String,TdatAnalysis.Tdat}[])">
+            <summary>添加一个键值对数组
+            
+            </summary>
+            <param name="value">添加的值</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.KeepAdd(System.String,TdatAnalysis.Tdat)">
+            <summary>保守添加方法，如果遇到重复键，将当前新值替换上一个旧值
+            
+            </summary>
+            <param name="name">名称</param>
+            <param name="tdat">Tdat文档对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.GetAppointTypeTdats(TdatAnalysis.TdatType)">
+            <summary>搜索指定类型的Tdat文档元素
+            
+            </summary>
+            <param name="type">Tdat文档类型</param>
+            <returns>此类型键和相对应的值</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.GetRecursionAppointTypeTdats(TdatAnalysis.TdatType)">
+            <summary>递归获取当前类和其子包的类型
+            
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.ToString">
+            <summary>将当前对象转换成字符串形式副本
+            
+            </summary>
+            <returns>字符串副本</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.GetEnumerator">
+            <summary>foreach循环枚举器
+            
+            </summary>
+            <returns>每次枚举的结果</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.System#Collections#IEnumerable#GetEnumerator">
+            <summary>foreach循环枚举器
+            
+            </summary>
+            <returns>每次枚举的结果</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdatItme.Item(System.String)">
+            <summary>通过制定的名称获取Tdat文档元素
+            
+            </summary>
+            <param name="name">Tdat元素名称</param>
+            <returns>指定的Tdat元素</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdatItme.Attributes">
+            <summary>属性字段集合
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdatItme.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdatItme.Names">
+            <summary>得到包下的元素名称集合
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdatItme.Tdats">
+            <summary>得到包下的元素集合
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdatItme.Attribute">
+            <summary>属性类
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatItme.Attribute.Add(System.String,System.String)">
+            <summary>添加一个属性方法
+            
+            </summary>
+            <param name="key">属性名称</param>
+            <param name="value">属性值</param>
+        </member>
+        <member name="T:TdatAnalysis.TdatText">
+            <summary>Tdat文档的文本对象
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatText.#ctor">
+            <summary>构造函数
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatText.#ctor(System.String)">
+            <summary>创建并添加文本构造函数
+            
+            </summary>
+            <param name="text">存储的文本</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatText.#ctor(System.String,System.Int32@)">
+            <summary>创建对象并解析Tdat文档的文本数据并存储
+            
+            </summary>
+            <param name="value">Tdat文档</param>
+            <param name="index">在Tdat文档的开始位置</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatText.Save(System.Int32,System.Text.StringBuilder)">
+            <summary>将当前对象进行保存成Tdat字符串语法形式
+            
+            </summary>
+            <param name="tabCount">排版的Tab键数量，如果为-1就不进行排版</param>
+            <param name="stringBuilder">存储转换完成结果的StringBuilder对象</param>
+        </member>
+        <member name="M:TdatAnalysis.TdatText.ToAppointedObject(System.Func{TdatAnalysis.Tdat,System.Object})">
+            <summary>将Tdat文档对象转换成指定对象方法
+            
+            </summary>
+            <param name="convert">转换方法【匿名函数】</param>
+            <returns>转换完成的对象</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatText.Equals(System.Object)">
+            <summary>判断当前对象与指定对象是否一致
+            
+            </summary>
+            <param name="obj">判断的对象</param>
+            <returns>true代表匹配false代表不匹配</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatText.GetHashCode">
+            <summary>将当前对象转换哈希值
+            
+            </summary>
+            <returns>当前Tdat文本对象哈希值</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatText.ToString">
+            <summary>将当前对象转换成字符串形式
+            
+            </summary>
+            <returns>字符串副本</returns>
+        </member>
+        <member name="P:TdatAnalysis.TdatText.Text">
+            <summary>文本属性
+            
+            </summary>
+        </member>
+        <member name="P:TdatAnalysis.TdatText.Type">
+            <summary>当前对象的类型
+            
+            </summary>
+        </member>
+        <member name="T:TdatAnalysis.TdatTool">
+            <summary>Tdat文档的各种工具方法
+            
+            </summary>
+        </member>
+        <member name="M:TdatAnalysis.TdatTool.BytesTo64Scale(System.Byte[])">
+            <summary>字节数组转换成64进制
+            
+            </summary>
+            <param name="value">要进行转换的字节数组</param>
+            <returns>转换完成的64进制字符数组</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatTool._64ScaleToBytes(System.Char[])">
+            <summary>将64进制字符数组转换成字节数组
+            
+            </summary>
+            <param name="value">64进制字符数组</param>
+            <returns>转换完成的字节数组</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatTool.StringTurnTdatText(System.String)">
+            <summary>将字符串转换成Tdat文档支持的兼容文本
+            
+            </summary>
+            <param name="value">要转换的字符串</param>
+            <returns>转换完成的字符串</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatTool.TdatTextTurnString(System.String)">
+            <summary>将Tdat文档的兼容文本转换普通字符串
+            
+            </summary>
+            <param name="value">Tdat兼容文本</param>
+            <returns>转换普通字符串</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatTool.IsLegalTdatName(System.String)">
+            <summary>判断当前Tdat文档名称是否合法
+            Tdat文档支持中文、英文、数字、下划线作为名称，以中文、英文、下划线开头
+            </summary>
+            <param name="name">判断的名称</param>
+            <returns>true代表合法false代表不合法</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatTool.IsChineseCharOrLetterOrNumeral(System.Char)">
+            <summary>判断当前字符是否为数字或者中文或者英文
+            
+            </summary>
+            <param name="isChar">判断的字符</param>
+            <returns>true代表是false代表不是英文、数字、中文</returns>
+        </member>
+        <member name="M:TdatAnalysis.TdatTool.GetTdatText(System.String,System.Int32@)">
+            <summary>获取Tdat文档中的文本值，并转换成C#的可用字符串
+            
+            </summary>
+            <param name="value">Tdta文档</param>
+            <param name="index">在Tdat文档的开始位置</param>
+            <returns>转换完成的C#字符串</returns>
+        </member>
+        <member name="T:TdatAnalysis.TdatType">
+            <summary>Tdat文档类型枚举
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdatBytes">
+            <summary>Tdat文档 字节数组
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdatItme">
+            <summary>Tdat文档 包
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdatText">
+            <summary>Tdat文档 文本
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdItmeDictionary">
+            <summary>Tdat文档 包键值对集合
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdBytesDictionary">
+            <summary>Tdat文档 字节数组键值对集合
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdTextDictionary">
+            <summary>Tdat文档 文本键值对集合
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdItmeList">
+            <summary>Tdae文档 包集合
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdTextList">
+            <summary>Tdat文档 文本集合
+            
+            </summary>
+        </member>
+        <member name="F:TdatAnalysis.TdatType.TdBytesList">
+            <summary>Tdat文档 字节数组集合
+            
+            </summary>
+        </member>
+    </members>
+</doc>

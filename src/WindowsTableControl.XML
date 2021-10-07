@@ -1,0 +1,728 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WindowsTableControl</name>
+    </assembly>
+    <members>
+        <member name="T:WindowsTableControl.TableDelegate`2">
+            <summary>表格事件委托
+            
+            </summary>
+            <typeparam name="S">触发事件的对象类型</typeparam>
+            <typeparam name="E">事件信息对象类型</typeparam>
+            <param name="sender">触发事件的对象</param>
+            <param name="e">事件信息对象</param>
+        </member>
+        <member name="T:WindowsTableControl.TableIndex">
+            <summary>指示在表格的指定单元格索引位置
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.TableIndex.#ctor(System.Int32,System.Int32)">
+            <summary>创建此结构并赋值
+            
+            </summary>
+            <param name="rowIndex">所在行索引</param>
+            <param name="cellIndex">所在列索引</param>
+        </member>
+        <member name="M:WindowsTableControl.TableIndex.ToString">
+            <summary>将当前对象转换成字符串副本
+            
+            </summary>
+            <returns>当前对象的字符串副本</returns>
+        </member>
+        <member name="M:WindowsTableControl.TableIndex.Equals(WindowsTableControl.TableIndex)">
+            <summary>比较两个对象是否一致方法
+            
+            </summary>
+            <param name="other">用于比较的对象</param>
+            <returns>true代表一致，false代表不一致</returns>
+        </member>
+        <member name="M:WindowsTableControl.TableIndex.Equals(System.Object)">
+            <summary>判断两个对象是否一致
+            
+            </summary>
+            <param name="obj">用于比较的对象</param>
+            <returns>true代表一致，false代表不一致</returns>
+        </member>
+        <member name="M:WindowsTableControl.TableIndex.GetHashCode">
+            <summary>将当前对象转换成哈希值
+            
+            </summary>
+            <returns>哈希值</returns>
+        </member>
+        <member name="M:WindowsTableControl.TableIndex.CompareTo(WindowsTableControl.TableIndex)">
+            <summary>排序方法
+            
+            </summary>
+            <param name="other">用于比较的对象</param>
+            <returns>一个值，指示要比较的对象的相对顺序。返回值的含义如下：值含义小于零此对象小于 other 参数。零此对象等于 other。大于零此对象大于 other。</returns>
+        </member>
+        <member name="M:WindowsTableControl.TableIndex.op_Inequality(WindowsTableControl.TableIndex,WindowsTableControl.TableIndex)">
+            <summary>判断两个表格索引对象是否不一致
+            
+            </summary>
+            <param name="ti1">对象1</param>
+            <param name="ti2">对象2</param>
+            <returns>判断结果，true为不一致，false为一致</returns>
+        </member>
+        <member name="M:WindowsTableControl.TableIndex.op_Equality(WindowsTableControl.TableIndex,WindowsTableControl.TableIndex)">
+            <summary>判断两个表格索引对象是否一致
+            
+            </summary>
+            <param name="ti1">对象1</param>
+            <param name="ti2">对象2</param>
+            <returns>true为一致，false为不一致</returns>
+        </member>
+        <member name="P:WindowsTableControl.TableIndex.RowIndex">
+            <summary>所在行索引
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableIndex.CellIndex">
+            <summary>所在列索引
+            
+            </summary>
+        </member>
+        <member name="T:WindowsTableControl.TableEventArgs">
+            <summary>表格事件对象
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.TableEventArgs.#ctor(WindowsTableControl.TR,WindowsTableControl.TD,System.Drawing.Point)">
+            <summary>创建当前事件对象并赋值
+            
+            </summary>
+            <param name="tr">触发事件的行对象</param>
+            <param name="td">触发事件的单元格对象</param>
+            <param name="location">触发事件的位置</param>
+        </member>
+        <member name="P:WindowsTableControl.TableEventArgs.TR">
+            <summary>触发事件的行对象，如果没有行对象触发此事件就为null
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableEventArgs.TD">
+            <summary>触发事件的单元格对象，如果没有单元格触发此事件就为null
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableEventArgs.Location">
+            <summary>触发此事件上个坐标位置【不一定正确】
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableEventArgs.X">
+            <summary>触发此事件上个坐标位置【不一定正确】X轴坐标
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableEventArgs.Y">
+            <summary>触发此事件上个坐标位置【不一定正确】Y轴坐标
+            
+            </summary>
+        </member>
+        <member name="T:WindowsTableControl.TableMouseEventArgs">
+            <summary>表格控件鼠标操作事件信息对象
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.TableMouseEventArgs.#ctor(WindowsTableControl.TR,WindowsTableControl.TD,System.Drawing.Point,System.Windows.Forms.MouseButtons,System.Int32,System.Int32)">
+            <summary>创建此事件并赋值
+            
+            </summary>
+            <param name="tr">触发事件的行对象，如果没有行对象触发此事件就为null</param>
+            <param name="td">触发事件的单元格对象，如果没有单元格触发此事件就为null</param>
+            <param name="location">触发此事件坐标位置</param>
+            <param name="button">获得点击的按钮</param>
+            <param name="clicks">获取按下并释放鼠标按钮的次数</param>
+            <param name="delta">获取鼠标轮已转动的制动器数的有符号计数。制动器是鼠标轮的一个凹口</param>
+        </member>
+        <member name="P:WindowsTableControl.TableMouseEventArgs.TR">
+            <summary>触发事件的行对象，如果没有行对象触发此事件就为null
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableMouseEventArgs.TD">
+            <summary>触发事件的单元格对象，如果没有单元格触发此事件就为null
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableMouseEventArgs.Location">
+            <summary>触发此事件坐标位置
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableMouseEventArgs.Button">
+            <summary>获得点击的按钮
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableMouseEventArgs.Clicks">
+            <summary>获取按下并释放鼠标按钮的次数。
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableMouseEventArgs.Delta">
+            <summary>获取鼠标轮已转动的制动器数的有符号计数。制动器是鼠标轮的一个凹口。
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableMouseEventArgs.X">
+            <summary>点击的X轴坐标
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableMouseEventArgs.Y">
+            <summary>点击的Y轴坐标
+            
+            </summary>
+        </member>
+        <member name="T:WindowsTableControl.IDraw">
+            <summary>设置控件显示的背景颜色、绘制背景的画笔、背景图片接口
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.IDraw.Draw">
+            <summary>开始设置当前对象的背景颜色、绘制背景的画笔、背景图片
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.IDraw.Draw(System.Drawing.Color)">
+            <summary>绘制背景颜色
+            
+            </summary>
+            <param name="color">绘制的背景颜色</param>
+        </member>
+        <member name="M:WindowsTableControl.IDraw.Draw(System.Drawing.Brush)">
+            <summary>用画笔绘制背景
+            
+            </summary>
+            <param name="br">画笔对象</param>
+        </member>
+        <member name="M:WindowsTableControl.IDraw.Draw(System.Drawing.Image)">
+            <summary>绘制背景图片
+            
+            </summary>
+            <param name="image">背景图片</param>
+        </member>
+        <member name="T:WindowsTableControl.TableControl">
+            <summary>表格控件的子控件父类
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.TableControl.#ctor(System.Drawing.Color,System.Drawing.Brush,System.Drawing.Image,System.Drawing.Rectangle)">
+            <summary>创建对象并给当前对象的所有属性赋值
+            
+            </summary>
+            <param name="backgroundColor">控件背景颜色</param>
+            <param name="backgroundBrush">填充控件背景的画刷对象</param>
+            <param name="backgroundPicture">填充控件的背景图片</param>
+            <param name="bounds">控件的有效范围</param>
+        </member>
+        <member name="M:WindowsTableControl.TableControl.#ctor(System.Drawing.Color,System.Drawing.Brush,System.Drawing.Image,System.Drawing.Rectangle,System.Object)">
+            <summary>创建对象并给当前对象的所有属性赋值
+            
+            </summary>
+            <param name="backgroundColor">控件背景颜色</param>
+            <param name="backgroundBrush">填充控件背景的画刷对象</param>
+            <param name="backgroundPicture">填充控件的背景图片</param>
+            <param name="bounds">控件的有效范围</param>
+            <param name="tag">控件包含的数据</param>
+        </member>
+        <member name="M:WindowsTableControl.TableControl.Contains(System.Drawing.Rectangle)">
+            <summary>判断指定范围【矩形范围】是否在此对象中
+            
+            </summary>
+            <param name="rect">判断的矩形范围</param>
+            <returns>true代表在当前控件范围内部，false代表不在当前控件内部</returns>
+        </member>
+        <member name="M:WindowsTableControl.TableControl.Contains(System.Drawing.Point)">
+            <summary>判断指定坐标是否在此控件内部
+            
+            </summary>
+            <param name="pt">判断的坐标对象</param>
+            <returns>true代表在此控件内部，false代表不在当前控件内部</returns>
+        </member>
+        <member name="M:WindowsTableControl.TableControl.Contains(System.Int32,System.Int32)">
+            <summary>判断指定坐标是否在此控件内部
+            
+            </summary>
+            <param name="x">X坐标</param>
+            <param name="y">Y坐标</param>
+            <returns>true代表在此控件内部，false代表不在当前控件内部</returns>
+        </member>
+        <member name="P:WindowsTableControl.TableControl.BackgroundColor">
+            <summary>获取与设置控件背景颜色
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableControl.BackgroundBrush">
+            <summary>获取与设置填充背景的画刷对象
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableControl.BackgroundPicture">
+            <summary>获取与设置背景图片
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableControl.Bounds">
+            <summary>获取控件的有效范围属性
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableControl.Size">
+            <summary>获取控件的范围
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TableControl.Tag">
+            <summary>获取与设置存储包含控件数据的对象
+            
+            </summary>
+        </member>
+        <member name="T:WindowsTableControl.Table">
+            <summary>表格控件
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.Table.#ctor">
+            <summary>创建表格对象并设置初始值
+            
+            </summary>
+        </member>
+        <member name="F:WindowsTableControl.Table.trs">
+            <summary>获取当前表格对象的行对象集合
+            
+            </summary>
+        </member>
+        <member name="F:WindowsTableControl.Table.tds">
+            <summary>获取当前表格对象的单元格对象集合
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.Table.CreateTable(System.Int32,System.Int32,System.Drawing.Size,System.Int32,System.Drawing.Color)">
+            <summary>设置创建表格的各个参数，行数量、列数量、单元格大小、边框宽度、边框颜色，将覆盖原来的所有行与单元格对象
+            
+            </summary>
+            <param name="rowCount">行数量</param>
+            <param name="cellCount">列数量</param>
+            <param name="tdSize">单元格大小</param>
+            <param name="borderWide">边框宽度</param>
+            <param name="borderColor">边框颜色</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.SetTable(System.Drawing.Size,System.Int32,System.Drawing.Color)">
+            <summary>设置表格对象的属性
+            
+            </summary>
+            <param name="tdSize">设置单元格大小</param>
+            <param name="borderWide">设置边框宽度</param>
+            <param name="borderColor">设置边框颜色</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.CalculateTableSize">
+            <summary>计算当前表格对象的内容实际大小
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.Table.SetControlForTableSize">
+            <summary>设置控件大小为当前表格实际内容的大小
+            
+            </summary>  
+        </member>
+        <member name="M:WindowsTableControl.Table.DrawBorder">
+            <summary>绘制边框方法
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.Table.GetCell(System.Int32)">
+            <summary>得到指定索引列的所有单元格对象
+            
+            </summary>
+            <param name="cellIndex">指定索引列</param>
+            <returns>单元格数组</returns>
+        </member>
+        <member name="M:WindowsTableControl.Table.GetCoordinateTR(System.Drawing.Point)">
+            <summary>得到指定坐标轴位置的行对象
+            
+            </summary>
+            <param name="location">指定坐标轴位置</param>
+            <returns>行对象，如果没有获取到行对象就返回null</returns>
+        </member>
+        <member name="M:WindowsTableControl.Table.GetCoordinateTD(System.Drawing.Point)">
+            <summary>得到指定坐标位置的单元格对象
+            
+            </summary>
+            <param name="location">指定坐标</param>
+            <returns>如果得到单元格对象就返回，得到的单元格对象，否则就返回null</returns>
+        </member>
+        <member name="M:WindowsTableControl.Table.Table_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>表格刷新事件
+            
+            </summary>
+            <param name="sender">表格对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="F:WindowsTableControl.Table.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.Table.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.Table.GetTableMouseEventArgs(System.Windows.Forms.MouseEventArgs)">
+            <summary>通过鼠标事件对象来获取表格事件对象
+            
+            </summary>
+            <param name="e">鼠标事件对象</param>
+            <returns>表格鼠标事件对象</returns>
+        </member>
+        <member name="M:WindowsTableControl.Table.GetTableEventArgs">
+            <summary>通过上次移动的坐标位置来获取表格事件对象
+            
+            </summary>
+            <returns>表格事件对象</returns>
+        </member>
+        <member name="F:WindowsTableControl.Table.lastLocation">
+            <summary>存储上次移动的坐标位置的变量
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.Table.Table_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>鼠标在控件中移动触发的事件
+            
+            </summary>
+            <param name="sender">当前控件对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.Table_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>鼠标在控件内按下鼠标按钮触发的事件
+            
+            </summary>
+            <param name="sender">当前Table控件</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.Table_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>鼠标在控件内单击按钮触发的事件
+            
+            </summary>
+            <param name="sender">当前Table对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.Table_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>鼠标在控件内双击鼠标按钮触发的事件
+            
+            </summary>
+            <param name="sender">当前表格对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.Table_Click(System.Object,System.EventArgs)">
+            <summary>单击控件触发的事件
+            
+            </summary>
+            <param name="sender">当前Table控件对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.Table_DoubleClick(System.Object,System.EventArgs)">
+            <summary>双击控件触发的事件
+            
+            </summary>
+            <param name="sender">当前Table对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:WindowsTableControl.Table.Table_MouseHover(System.Object,System.EventArgs)">
+            <summary>鼠标停留在控件上方一段时间触发的事件
+            
+            </summary>
+            <param name="sender">当前触发事件的Table对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="P:WindowsTableControl.Table.Item(System.Int32)">
+            <summary>获取指定行索引位置的行对象
+            
+            </summary>
+            <param name="rowIndex">指定行索引位置</param>
+            <returns>行对象</returns>
+        </member>
+        <member name="P:WindowsTableControl.Table.Item(WindowsTableControl.TableIndex)">
+            <summary>获取指定表格索引位置的单元格对象
+            
+            </summary>
+            <param name="tdIndex">表格索引</param>
+            <returns>表格对象</returns>
+        </member>
+        <member name="P:WindowsTableControl.Table.Item(System.Int32,System.Int32)">
+            <summary>获取当前表格指定位置的第单元格对象
+            
+            </summary>
+            <param name="rowIndex">行索引位置</param>
+            <param name="cellIndex">列索引位置</param>
+            <returns>指定索引位置的单元格对象</returns>
+        </member>
+        <member name="P:WindowsTableControl.Table.Length">
+            <summary>当前表格对象的行对象数量
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.Table.RowCount">
+            <summary>获取与设置行数量
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.Table.CellCount">
+            <summary>获取与设置列数量
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.Table.GDI">
+            <summary>获取当前表格的GDI+对象
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.Table.TdSize">
+            <summary>获取与设置单元格大小
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.Table.BorderWide">
+            <summary>获取与设置边框宽度
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.Table.BorderColor">
+            <summary>获取与设置边框颜色
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.Table.TableSize">
+            <summary>当前表格控件的有效表格内容范围
+            
+            </summary>
+        </member>
+        <member name="E:WindowsTableControl.Table.MouseMove">
+            <summary>鼠标在控件上方移动事件
+            
+            </summary>
+        </member>
+        <member name="E:WindowsTableControl.Table.MouseDown">
+            <summary>鼠标在控件上方点击按钮触发的事件
+            
+            </summary>
+        </member>
+        <member name="E:WindowsTableControl.Table.MouseClick">
+            <summary>鼠标在控件上方点击鼠标按钮触发的事件
+            
+            </summary>
+        </member>
+        <member name="E:WindowsTableControl.Table.MouseDoubleClick">
+            <summary>鼠标在控件上方双击按钮触发的事件
+            
+            </summary>
+        </member>
+        <member name="E:WindowsTableControl.Table.Click">
+            <summary>单击控件触发的事件
+            
+            </summary>
+        </member>
+        <member name="E:WindowsTableControl.Table.DoubleClick">
+            <summary>双击控件触发的事件
+            
+            </summary>
+        </member>
+        <member name="E:WindowsTableControl.Table.MouseHover">
+            <summary>鼠标在控件上方静止一段时间触发的事件
+            
+            </summary>
+        </member>
+        <member name="T:WindowsTableControl.TD">
+            <summary>表格单元格对象
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.TD.#ctor(WindowsTableControl.Table,WindowsTableControl.TR,WindowsTableControl.TableIndex,System.Drawing.Color,System.Drawing.Brush,System.Drawing.Image,System.Drawing.Rectangle)">
+            <summary>创建此单元格对象并设置初始值
+            
+            </summary>
+            <param name="table">爷爷表格对象</param>
+            <param name="tr">父行对象</param>
+            <param name="tableIndex">当前单元格所在表格的索引位置</param>
+            <param name="backgroundColor">单元格背景颜色</param>
+            <param name="backgroundBrush">单元格填充背景画刷</param>
+            <param name="backgroundPicture">单元格背景图片</param>
+            <param name="bounds">当前单元格有效范围</param>
+        </member>
+        <member name="M:WindowsTableControl.TD.SetTD(System.Drawing.Rectangle)">
+            <summary>【内部使用】更改当前单元格范围
+            
+            </summary>
+            <param name="bounds">单元格范围</param>
+        </member>
+        <member name="M:WindowsTableControl.TD.Draw">
+            <summary>开始设置当前对象的背景颜色、绘制背景的画笔、背景图片
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.TD.Draw(System.Drawing.Color)">
+            <summary>绘制背景颜色
+            
+            </summary>
+            <param name="color">绘制的颜色</param>
+        </member>
+        <member name="M:WindowsTableControl.TD.Draw(System.Drawing.Brush)">
+            <summary>用指定画笔对象来填充背景颜色
+            
+            </summary>
+            <param name="br">用来填充的画刷</param>
+        </member>
+        <member name="M:WindowsTableControl.TD.Draw(System.Drawing.Image)">
+            <summary>用指定图片来填充背景
+            
+            </summary>
+            <param name="image">要进行填充的图片对象</param>
+        </member>
+        <member name="M:WindowsTableControl.TD.Equals(System.Object)">
+            <summary>判断两个对象是否一致方法
+            
+            </summary>
+            <param name="obj">判断的对象</param>
+            <returns>true表示匹配，false代表不匹配</returns>
+        </member>
+        <member name="P:WindowsTableControl.TD.Table">
+            <summary>当前单元格的爷爷表格对象
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TD.TR">
+            <summary>当前单元格的父行对象
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TD.TableIndex">
+            <summary>获取当前单元格在表格的索引位置
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TD.BackgroundColor">
+            <summary>获取与设置单元格背景颜色
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TD.BackgroundBrush">
+            <summary>获取与设置单元格填充画笔
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TD.BackgroundPicture">
+            <summary>获取与设置单元格背景图片
+            
+            </summary>
+        </member>
+        <member name="T:WindowsTableControl.TR">
+            <summary>表格行对象
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.TR.#ctor(WindowsTableControl.Table,WindowsTableControl.TD[],System.Int32,System.Drawing.Color,System.Drawing.Brush,System.Drawing.Image,System.Drawing.Rectangle)">
+            <summary>创建行对象并设置初始值
+            
+            </summary>
+            <param name="table">父表格对象</param>
+            <param name="tds">子单元格数组</param>
+            <param name="rowIndex">当前行对象所在表格对象的行索引位置</param>
+            <param name="backgroundColor">行对象背景颜色</param>
+            <param name="backgroundBrush">行对象填充背景的画刷对象</param>
+            <param name="backgroundPicture">行对象的背景图片</param>
+            <param name="bounds">行对象范围</param>
+        </member>
+        <member name="M:WindowsTableControl.TR.SetTR(System.Drawing.Rectangle)">
+            <summary>【内部使用】设置当前行对象范围
+            
+            </summary>
+            <param name="bounds">行对象范围</param>
+        </member>
+        <member name="M:WindowsTableControl.TR.GetCoordinateTD(System.Drawing.Point)">
+            <summary>得到指定位置的单元格对象
+            
+            </summary>
+            <param name="location">指定坐标位置</param>
+            <returns>单元格对象</returns>
+        </member>
+        <member name="M:WindowsTableControl.TR.Draw">
+            <summary>设置当前行的背景颜色、填充背景的画笔、背景图片等
+            
+            </summary>
+        </member>
+        <member name="M:WindowsTableControl.TR.Draw(System.Drawing.Color)">
+            <summary>设置当前行的背景颜色
+            
+            </summary>
+            <param name="color">要设置背景颜色</param>
+        </member>
+        <member name="M:WindowsTableControl.TR.Draw(System.Drawing.Brush)">
+            <summary>设置当前行的背景填充画刷
+            
+            </summary>
+            <param name="br">填充的画刷对象</param>
+        </member>
+        <member name="M:WindowsTableControl.TR.Draw(System.Drawing.Image)">
+            <summary>设置当前行对象的背景图片
+            
+            </summary>
+            <param name="image">背景图片对象</param>
+        </member>
+        <member name="M:WindowsTableControl.TR.Equals(System.Object)">
+            <summary>判断两个行对象是否一致
+            
+            </summary>
+            <param name="obj">判断的行对象</param>
+            <returns>true为一致，false为不一致</returns>
+        </member>
+        <member name="P:WindowsTableControl.TR.Item(System.Int32)">
+            <summary>根据指定索引获取指定索引位置的单元格对象
+            
+            </summary>
+            <param name="index">指定索引</param>
+            <returns>单元格对象</returns>
+        </member>
+        <member name="P:WindowsTableControl.TR.Table">
+            <summary>获取父表格对象
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TR.Length">
+            <summary>获取当前行对象的单元格数量
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TR.RowIndex">
+            <summary>获取当前行对象所在表格对象的行索引位置
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TR.BackgroundColor">
+            <summary>获取与设置当前行的背景颜色
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TR.BackgroundBrush">
+            <summary>获取与设置当前行对象的填充背景画刷
+            
+            </summary>
+        </member>
+        <member name="P:WindowsTableControl.TR.BackgroundPicture">
+            <summary>获取与设置当前行对象的背景图片
+            
+            </summary>
+        </member>
+    </members>
+</doc>
